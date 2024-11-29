@@ -15,7 +15,7 @@ class Building extends CircleObject {
 
         // 生产特性
         this.moneyAddedAble = false;
-        this.moneyAddedNum = 0;  // 一次增加多少金钱
+        this.moneyAddedNum = 100;  // 一次增加多少金钱
         this.moneyAddedFreezeTime = 300;  // 多少个tick增加一次金钱
 
         // 自身回血特性
