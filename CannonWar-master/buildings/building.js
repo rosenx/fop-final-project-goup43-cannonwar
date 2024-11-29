@@ -1,4 +1,3 @@
-/
 class Building extends CircleObject {
     /**
      *
@@ -15,8 +14,8 @@ class Building extends CircleObject {
 
         // 生产特性
         this.moneyAddedAble = false;
-        this.moneyAddedNum = 100;  // 一次增加多少金钱
-        this.moneyAddedFreezeTime = 300;  // 多少个tick增加一次金钱
+        this.moneyAddedNum = 0;  // 一次增加多少金钱
+        this.moneyAddedFreezeTime = 200;  // 多少个tick增加一次金钱
 
         // 自身回血特性
         this.hpAddNum = 0;
@@ -28,7 +27,23 @@ class Building extends CircleObject {
         this.otherHpAddNum = 0;
         this.otherHpAddFreezeTime = 100;
 
-        this.levelUpArr = []
+        this.levelUpArr = [];
+    }
+
+    // 放置炮塔特效
+    addBatteryEffect() {
+        let e = new EffectCircle(this.pos);
+        e.circle.r = this.r * 1.5; // 特效范围比建筑稍大
+        e.animationFunc = e.flashYellowAnimation; // 使用黄色闪烁动画
+        e.duration = 50; // 持续时间
+        this.world.addEffect(e);
+    }
+
+    // 模拟放置炮塔的方法
+    placeBattery() {
+        // 逻辑处理：添加炮塔
+        console.log("炮塔已放置！");
+        this.addBatteryEffect(); // 添加特效
     }
 
     goStep() {
@@ -65,7 +80,12 @@ class Building extends CircleObject {
                         b.hpChange(this.otherHpAddNum);
                     }
                 }
-           
+                // 加血特效
+                let e = new EffectCircle(this.pos);
+                e.animationFunc = e.expandingRingAnimation; // 修改为扩散环形动画
+                e.circle.r = this.otherHpAddRadius;
+                e.duration = this.otherHpAddFreezeTime / 2; // 更短的动画时间
+                this.world.addEffect(e);
             }
         }
     }
@@ -81,7 +101,7 @@ class Building extends CircleObject {
         if (this.otherHpAddAble) {
             let c = new Circle(this.pos.x, this.pos.y, this.otherHpAddRadius);
             c.fillColor = MyColor.Transparent();
-            c.strokeColor.setRGBA(101, 139, 60, 12);
+            c.strokeColor.setRGBA(81, 139, 60, 1);
             c.setStrokeWidth(0.5);
             c.render(ctx);
         }
