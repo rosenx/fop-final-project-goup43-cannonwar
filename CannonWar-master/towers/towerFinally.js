@@ -10,7 +10,7 @@ class TowerFinally {
      */
     static BasicCannon(world) {
         let res = new Tower(0, 0, world);
-        res.name = "基础炮塔";
+        res.name = "Fundamental Tower";
         res.levelUpArr = [
             TowerFinally.AncientCannon,
             TowerFinally.TraditionalCannon,
