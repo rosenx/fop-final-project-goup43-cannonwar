@@ -12,7 +12,7 @@ This is a front-end game built with pure js, called Tower Defense War. You need 
 
 ## Current bugs:
 
-After starting to play, after clicking back, start the game again, there will be a bug that the button cannot be clicked, the screen flashes, and it cannot be operated. The base camp inexplicably moves a distance to the lower right corner. **If you encounter this situation, just refresh it. **But if you refresh while the game is in progress, you will lose progress.
+After starting to play, after clicking back, start the game again, there will be a bug that the button cannot be clicked, the screen flashes, and it cannot be operated. The base camp inexplicably moves a distance to the lower right corner. **If you encounter this situation, just refresh it. **But if you refresh while the game is in progress, you will lose progress.（No modification method has been found yet）
 
 ## Project Background History
 
