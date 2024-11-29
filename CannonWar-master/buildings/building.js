@@ -81,7 +81,7 @@ class Building extends CircleObject {
         if (this.otherHpAddAble) {
             let c = new Circle(this.pos.x, this.pos.y, this.otherHpAddRadius);
             c.fillColor = MyColor.Transparent();
-            c.strokeColor.setRGBA(81, 139, 60, 1);
+            c.strokeColor.setRGBA(101, 139, 60, 12);
             c.setStrokeWidth(0.5);
             c.render(ctx);
         }
