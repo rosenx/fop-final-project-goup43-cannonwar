@@ -1,7 +1,4 @@
-/**
- *
- * by littlefean
- */
+/
 class Building extends CircleObject {
     /**
      *
@@ -19,7 +16,7 @@ class Building extends CircleObject {
         // 生产特性
         this.moneyAddedAble = false;
         this.moneyAddedNum = 0;  // 一次增加多少金钱
-        this.moneyAddedFreezeTime = 100;  // 多少个tick增加一次金钱
+        this.moneyAddedFreezeTime = 300;  // 多少个tick增加一次金钱
 
         // 自身回血特性
         this.hpAddNum = 0;
@@ -68,12 +65,7 @@ class Building extends CircleObject {
                         b.hpChange(this.otherHpAddNum);
                     }
                 }
-                // 加血特效
-                let e = new EffectCircle(this.pos);
-                e.animationFunc = e.flashGreenAnimation;
-                e.duration = this.otherHpAddFreezeTime;
-                e.circle.r = this.otherHpAddRadius;
-                this.world.addEffect(e);
+           
             }
         }
     }
